@@ -11,6 +11,12 @@
 
   <title>Draggable Canvas</title>
 
+  <!-- <link rel="stylesheet" type="text/css" href="css/normalize.css" /> -->
+
+  <!-- <link rel="stylesheet" type="text/css" href="css/demo.css" /> -->
+
+  <!-- <link rel="stylesheet" type="text/css" href="css/component.css" /> -->
+
   <style>
     * {
       margin: 0;
@@ -18,45 +24,39 @@
       box-sizing: border-box;
     }
 
-    #content {
-      position: absolute;
-      top: 40px;
-      left: 360px;
-      z-index: -1;
-      width: 1200px;
-      height: 620px;
-
-      border: 3px solid blueviolet;
+    body {
+      background: initial;
     }
 
-    #canvas-wrapper {
+    #content {
       position: relative;
-      top: 160px;
-      left: 400px;
-      width: 400px;
-      height: 300px;
-      border: 1px solid green;
+      margin: 0 auto;
+      padding: 0;
+      /* max-width: 900px;
+      width: 900px;
+      min-height: 570px;
+      height: 570px; */
+      /* background: url(../img/gridme.png) repeat center center; */
+      background: initial;
+      border: 3px solid #49708A;
       /* overflow: hidden; */
+
+      width: 1300px;
+      height: 900px;
     }
 
     #canvas {
-      position: absolute;
-      left: 0;
-      top: 0;
-      z-index: 6;
-
-      width: 795px;
-      height: 455px;
-      border: 1px solid red;
-      background: url(./img/gridme-small.png);
-      cursor: pointer;
+      /* background: url(./img/gridme-small.png); */
+      background: url(./img/image.jpg);
+      width: 1200px;
+      height: 800px;
     }
   </style>
 </head>
 
 <body>
   <div id="content">
-    <div id="canvas-wrapper">
+    <div id="canvas-container">
       <div id="canvas"></div>
     </div>
   </div>
