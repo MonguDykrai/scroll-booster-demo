@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const obj = [
+      { id: 0, pid: '' },
+      { id: 1, pid: '0' }
+    ]
+
+    const arr = []
+
+    obj.forEach(item => {
+      if (item.pid != '') {
+        arr.push({...item, children: []})
+      }
+    })
+
+    const arr2 = []
+
+    obj.forEach(item => {
+      if (item.pid == '') {
+        arr2.push({ ...item, children: [] })
+      }
+    })
+
+    console.log(obj)
+    console.log(arr)
+    console.log(arr2)
+
+    arr.forEach(outerItem => {
+      arr2.forEach(innerItem => {
+        if (outerItem.pid ==  innerItem.id) {
+          innerItem.children.push(outerItem);
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

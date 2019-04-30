@@ -1,0 +1,31 @@
+<script>
+  const json = [
+    { "id": "2", "pid": "" },
+    { "id": "4", "pid": "2" },
+    { "id": "8", "pid": "4" }
+  ]
+
+  function toTree(json, arrRes) {
+    json.forEach(outerItem => {
+      if (outerItem.pid != "") {
+        json.forEach(innerItem => {
+          if (outerItem.pid == innerItem.id) {
+            arrRes.push({ id: innerItem.id, pid: innerItem.pid, children: [{ ...outerItem, children: [] }] })
+          }
+        });
+      }
+    });
+  }
+
+  toTree(json, []);
+
+  const obj = [{
+    "id": "2",
+    "pid": "",
+    "children": [{
+      "id": "4",
+      "pid": "2",
+      "children": []
+    }]
+  }]
+</script>
